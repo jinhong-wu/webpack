@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <div>Home</div>
-    <router-link to="/home/news">HomeNews</router-link>
-    <router-view></router-view>
-  </div>
+  <div>HomeNews</div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "HomeNews",
   data() {
     return {};
   },

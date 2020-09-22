@@ -8,10 +8,11 @@ module.exports = {
   entry: "./src/main.js",
   //出口
   output: {
-    path: path.resolve(__dirname, "dist"), //动态获取路径
+    path: path.resolve(__dirname, "dist"), //动态获取绝对路径
     filename: "bundle.js",
     // HtmlWebpackPlugin引入后，打包时都在同一个根目录下，就不用配置publicPath了
-    // publicPath: "dist/", //后面涉及到url的东西，都会自动加上dist/
+    // vue报错：Loading chunk * failed，vue-router路由懒加载出错问题。publicPath改为'/'
+    publicPath: "/", // publicPath: "dist/"后面涉及到url的东西，都会自动加上dist/
   },
   // 引用的loader
   module: {
@@ -58,6 +59,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["es2015"],
+            plugins: ['syntax-dynamic-import']
           },
         },
       },
@@ -86,5 +88,6 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
     inline: true,
+    port: 8081  // 设置端口
   },
 };
