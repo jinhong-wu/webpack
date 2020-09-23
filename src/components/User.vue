@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     userId() {
-      // 这里是$route不是$router，route表示活跃的路由
+      // 这里是$route不是$router，route表示当前路由
       return this.$route.params.userId;
     },
   },

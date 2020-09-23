@@ -5,11 +5,16 @@
     <router-link to="/about">About</router-link>
     <router-link :to="'/user/'+userId">User</router-link>
     <router-link :to="{path: '/profile', query: {name: 'wjh', age: 22}}">Profile</router-link>
-    <router-view></router-view>
+
     <!-- 使用代码方式修改router -->
     <!-- <button @click="routerClick('/home')">Home</button>
-    <button @click="routerClick('/about')">About</button>
-    <router-view></router-view>-->
+    <button @click="routerClick('/about')">About</button>-->
+
+    <!-- keep-alive是Vue的一个内置组件，可以使被包含的组件保留状态被缓存，避免重新渲染 -->
+    <!-- name为Profile的页面不缓存 -->
+    <keep-alive exclude="Profile,User">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -36,6 +41,7 @@ export default {
       // });
     },
   },
+  created() {},
 };
 </script>
 

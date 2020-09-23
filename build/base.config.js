@@ -8,10 +8,11 @@ module.exports = {
   entry: "./src/main.js",
   //出口
   output: {
-    path: path.resolve(__dirname, "dist"), //动态获取绝对路径
+    path: path.resolve(__dirname, "../dist"), //动态获取绝对路径
     filename: "bundle.js",
     // HtmlWebpackPlugin引入后，打包时都在同一个根目录下，就不用配置publicPath了
     // vue报错：Loading chunk * failed，vue-router路由懒加载出错问题。publicPath改为'/'
+    // publicPath改为'/'，表示在引入静态资源时，从根路径开始引入
     publicPath: "/", // publicPath: "dist/"后面涉及到url的东西，都会自动加上dist/
   },
   // 引用的loader
@@ -76,18 +77,18 @@ module.exports = {
       vue$: "vue/dist/vue.esm.js", // 指定vue应用vue.esm.js
     },
   },
-  // 插件
+  // 插件（已分离）
   plugins: [
     new webpack.BannerPlugin("最终版权归WJH所有"), //webpack自带的BannerPlugin插件
     new HtmlWebpackPlugin({
       template: "index.html", //通过index.html作为模板创建，配置后index.html就不用自己引入script了
     }),
-    new UglifyjsWebpackPlugin(),
+    //   new UglifyjsWebpackPlugin(),
   ],
-  // 本地服务器
-  devServer: {
-    contentBase: "./dist",
-    inline: true,
-    port: 8081  // 设置端口
-  },
+  // 本地服务器（已分离）
+  // devServer: {
+  //   contentBase: "./dist",
+  //   inline: true,
+  //   port: 8081  // 设置端口
+  // },
 };
