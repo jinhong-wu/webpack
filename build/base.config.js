@@ -60,7 +60,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["es2015"],
-            plugins: ['syntax-dynamic-import']
+            plugins: ["syntax-dynamic-import"],
           },
         },
       },
@@ -73,8 +73,10 @@ module.exports = {
   // 解决路径之类的问题
   resolve: {
     extensions: [".js", ".css", ".vue"], // 配置后可省略写后缀名
+    // 别名
     alias: {
-      vue$: "vue/dist/vue.esm.js", // 指定vue应用vue.esm.js
+      vue$: "vue/dist/vue.esm.js", // 指定vue运行vue.esm.js（包括compiler）
+      "@": resolve("src"), // 后面引用文件不用写../，直接写@
     },
   },
   // 插件（已分离）
