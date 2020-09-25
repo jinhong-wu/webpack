@@ -76,7 +76,7 @@ module.exports = {
     // 别名
     alias: {
       vue$: "vue/dist/vue.esm.js", // 指定vue运行vue.esm.js（包括compiler）
-      "@": resolve("src"), // 后面引用文件不用写../，直接写@
+      "@": path.resolve("src"), // 后面引用文件不用写../，直接写@
     },
   },
   // 插件（已分离）

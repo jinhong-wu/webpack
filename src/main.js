@@ -17,10 +17,13 @@
 // 使用Vue
 import Vue from "vue";
 import App from "./App";
-import router from "./router"
+import router from "./router"  //vue-router
+import store from "./store"    //vuex
+
 new Vue({
   el: "#app", //template中的内容最终会替换el里面的内容
   router,
+  store,
   template: `<App/> `,
   components: {
     App,
@@ -30,3 +33,4 @@ new Vue({
 //   render: h => h(App),
 //   router
 // }).$mount('#app');
+

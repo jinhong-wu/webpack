@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- 使用路由：router-link、router-view -->
-    <router-link to="/home" tag="button">Home</router-link>
+    <router-link
+      to="/home"
+      tag="button"
+    >Home</router-link>
     <router-link to="/about">About</router-link>
     <router-link :to="'/user/'+userId">User</router-link>
     <router-link :to="{path: '/profile', query: {name: 'wjh', age: 22}}">Profile</router-link>
@@ -15,6 +18,13 @@
     <keep-alive exclude="Profile,User">
       <router-view></router-view>
     </keep-alive>
+
+    <!-- vuex -->
+    <div>
+      <h2>Vuex</h2>
+      {{$store.getters.powerCounter}}
+      <button @click="add(2)">+双倍</button>
+    </div>
   </div>
 </template>
 
@@ -38,6 +48,15 @@ export default {
       //     name: "wjh",
       //     age: 22,
       //   },
+      // });
+    },
+    add(num) {
+      // 第一种写法：调用vuex里mutations里的increment函数，传参方法
+      this.$store.commit("increment", num);
+      // 第二种写法：这种方法传去的数据有变化，可打印观察
+      // this.$store.commit({
+      //   type: "increment",
+      //   num,
       // });
     },
   },
