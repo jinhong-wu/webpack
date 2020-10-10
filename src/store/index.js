@@ -32,7 +32,7 @@ const store = new Vuex.Store({
   mutations: {
     increment(state, num) {
       num = num || 1;
-      state.counter + num;
+      state.counter += num;
     },
     updateInfo(state) {
 

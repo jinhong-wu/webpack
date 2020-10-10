@@ -1,7 +1,7 @@
 const path = require("path"); //当前文件路径（path的包）
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const UglifyjsWebpackPlugin = require("uglifyjs-webpack-plugin");
+// const UglifyjsWebpackPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   //入口：可以使字符喜欢/数组/对象
