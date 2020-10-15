@@ -34,7 +34,12 @@ module.exports = {
               // 当加载的图片，小于limit时，图片会编译成base64字符串形式
               // 当加载的图片，大于limit时，需要使用file-loader模块进行加载
               limit: 8192,
-              name: "img/[name].[hash:8].[ext]", //打包后的图片名字
+              // 打包后的图片名字
+              // img：文件要打包到的文件夹
+              // name: 获取图片原来的名字，放在该位置
+              // hash:8：防止图片名称冲突，baoliuhash（保留8位）
+              // ext：使用原来图片的扩展名
+              name: "img/[name].[hash:8].[ext]",
             },
           },
         ],
