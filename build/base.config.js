@@ -95,7 +95,7 @@ module.exports = {
   // 本地服务器（已分离）
   // devServer: {
   //   contentBase: "./dist",
-  //   inline: true,
+  //   inline: true,  // 页面实时刷新
   //   port: 8081  // 设置端口
   // },
 };
