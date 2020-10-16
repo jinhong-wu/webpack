@@ -9,9 +9,11 @@
 - 开发时依赖
 ## vue基本使用
 - vue基本语法
-- ​vue-router
+- vue-router
 - Vuex
 - axios
 ## 文件含义
 - .gitignore：上传github忽略文件写法
 - .editorconfig：统一样式标准
+
+test
